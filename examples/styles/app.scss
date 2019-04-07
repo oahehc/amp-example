@@ -1,0 +1,15 @@
+.flex-container {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid lightgray;
+
+  & > div {
+    flex: 1;
+    min-width: 200px;
+    margin: 5px;
+    padding: 5px;
+    background-color: aquamarine;
+  }
+}
