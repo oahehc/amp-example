@@ -18,6 +18,11 @@
       custom-element="amp-position-observer"
       src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"
     ></script>
+    <script
+      async
+      custom-element="amp-bind"
+      src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+    ></script>
     <meta
       name="viewport"
       content="width=device-width,minimum-scale=1,initial-scale=1"
@@ -49,7 +54,8 @@
         top: 0;
         right: 0;
         font-size: 20px;
-        cursor: pointer;
+        font-weight: 800;
+        color: white;
       }
     </style>
     <!-- prettier-ignore -->
@@ -199,9 +205,11 @@
       officiis blanditiis sunt alias. Provident possimus perferendis iusto totam
       delectus autem ullam molestias quibusdam voluptatem labore?
     </article>
-    <div class="footer">
-      <!-- TODO: save close action to session storage to prevent display again -->
-      <button on="tap:footerHideAnim.start">X</button>
+    <div class="footer" [hidden]="hideFooter">
+      <!-- TODO: save close action to session storage to prevent display again during this session -->
+      <button on="tap:footerHideAnim.start,AMP.setState({hideFooter: true})">
+        X
+      </button>
       <footer>The Footer</footer>
     </div>
     <div id="footer-trigger"></div>
