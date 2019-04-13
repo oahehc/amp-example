@@ -51,6 +51,10 @@ render content from a two dimension array
 }
 ```
 
+#### \* amp-footer
+
+display footer when user scrolling to second page, and update state when user click dismiss button
+
 ---
 
 ## How to start?
