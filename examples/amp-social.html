@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Hello, AMPs</title>
+    <link rel="canonical" href="http://amp-examples.com/amp-social.html" />
+    <script
+      async
+      custom-element="amp-social-share"
+      src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-twitter"
+      src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+    ></script>
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <script
+      async
+      custom-element="amp-facebook-comments"
+      src="https://cdn.ampproject.org/v0/amp-facebook-comments-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-facebook-like"
+      src="https://cdn.ampproject.org/v0/amp-facebook-like-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-facebook"
+      src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"
+    ></script>
+    <style amp-custom>
+      body {
+        padding: 5px;
+      }
+
+      .social-share {
+        border-radius: 50%;
+      }
+    </style>
+    <!-- prettier-ignore -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <!-- prettier-ignore -->
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <h1>Social Share</h1>
+    <amp-social-share
+      class="social-share"
+      type="facebook"
+      width="60"
+      height="60"
+      data-param-app_id="fb_app_id"
+    ></amp-social-share>
+    <amp-social-share
+      class="social-share"
+      type="line"
+      width="60"
+      height="60"
+    ></amp-social-share>
+    <amp-social-share
+      class="social-share"
+      type="linkedin"
+      width="60"
+      height="60"
+    ></amp-social-share>
+    <amp-social-share
+      class="social-share"
+      type="pinterest"
+      width="60"
+      height="60"
+      data-param-media="https://s3-ap-northeast-1.amazonaws.com/oahehc/cdn/sample/apple.jpg"
+    ></amp-social-share>
+    <amp-social-share
+      class="social-share"
+      type="twitter"
+      width="60"
+      height="60"
+    ></amp-social-share>
+    <amp-social-share
+      class="social-share"
+      type="whatsapp"
+      width="60"
+      height="60"
+    ></amp-social-share>
+    <hr />
+    <h1>FB like</h1>
+    <amp-facebook-like
+      width="90"
+      height="20"
+      layout="fixed"
+      data-layout="button_count"
+      data-href="https://www.facebook.com/langlangdontcry/"
+    >
+    </amp-facebook-like>
+    <hr />
+    <h1>FB post</h1>
+    <amp-facebook
+      width="552"
+      height="310"
+      layout="responsive"
+      data-href="https://www.facebook.com/langlangdontcry/videos/1201936299950753/"
+    >
+    </amp-facebook>
+    <hr />
+    <h1>FB comments</h1>
+    <amp-facebook-comments
+      width="486"
+      height="657"
+      layout="responsive"
+      data-href="http://www.directlyrics.com/adele-25-complete-album-lyrics-news.html"
+      data-numposts="5"
+      data-order-by="reverse_time"
+    ></amp-facebook-comments>
+    <hr />
+    <h1>twitter</h1>
+    <amp-twitter
+      width="375"
+      height="472"
+      layout="responsive"
+      data-tweetid="1110254099155599360"
+    ></amp-twitter>
+    <hr />
+  </body>
+</html>
