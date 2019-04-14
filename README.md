@@ -71,6 +71,10 @@ render html base on API response
 
 ```
 
+#### \* amp-font-size-toggle
+
+button for adjust font-size
+
 ---
 
 ## How to start?
