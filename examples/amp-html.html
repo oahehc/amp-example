@@ -65,6 +65,9 @@
       single-item
     >
       <template type="amp-mustache">
+        <!-- apply mustache to render html: a, b, br, caption, colgroup, code, del, div, em, i, ins, li, mark, ol, p, q, s, small, span, strong, sub, sup, table, tbody, time, td, th, thead, tfoot, tr, u, ul -->
+        {{{content}}}
+        <!-- render html tag base on json key if not support by mustache -->
         {{#h1}}
         <h1>{{ h1 }}</h1>
         {{/h1}}
@@ -87,7 +90,6 @@
           <figcaption>{{ figcaption }}</figcaption>
         </figure>
         {{/img}}
-        {{{content}}}
       </template>
       <div overflow class="list-overflow">
         see more
