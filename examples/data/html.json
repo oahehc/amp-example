@@ -1,0 +1,27 @@
+{
+  "items": [
+    { "h1": "h1 Title" },
+    { "h6": "h2 Subtitle" },
+    {
+      "img": {
+        "src": "/images/bear-3308068_640.jpg",
+        "alt": "image_alt",
+        "width": 640,
+        "height": 426,
+        "figcaption": "image_figcaption"
+      }
+    },
+    { "blockquote": "blockquote something ..." },
+    {
+      "content": "<p>Lorem ipsum dolor sit <em>amet consectetur adipisicing</em> elit. Odit earum alias, beatae saepe aliquam quibusdam magni amet fuga suscipit rem architecto nulla ad blanditiis voluptas deleniti laborum aut at laudantium!</p>"
+    },
+    {
+      "content": "<p class=\"red\">Lorem <a href=\"xxx\">ipsum dolor sit amet</a> consectetur adipisicing elit. Odit earum alias, beatae saepe aliquam quibusdam magni amet fuga suscipit rem architecto nulla ad blanditiis voluptas deleniti laborum aut at laudantium!</p>"
+    },
+    {
+      "content": "<table><thead><tr><th>Name</th><th>Price</th></tr></thead><tbody><tr><td>S&amp;P 500</td><td>18534.00</td></tr><tr><td>FTSE</td><td>6857.14</td></tr></tbody></table>"
+    },
+    { "content": "<ol><li>S&amp;P 500</li><li>FTSE</li></ol>" },
+    { "content": "<ul><li>S&amp;P 500</li><li>FTSE</li></ul>" }
+  ]
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Hello, AMPs</title>
+    <link
+      rel="canonical"
+      href="http://example.ampproject.org/article-metadata.html"
+    />
+    <script
+      async
+      custom-element="amp-list"
+      src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
+    ></script>
+    <script
+      async
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+    ></script>
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <style amp-custom>
+      body {
+        padding: 10px;
+      }
+
+      .red {
+        color: red;
+      }
+
+      blockquote {
+        background: rgba(100, 100, 100, 0.2);
+        border-left: 5px solid gray;
+        padding: 10px;
+      }
+
+      table {
+        width: 90%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid lightgray;
+      }
+      thead {
+        background-color: darkgray;
+        color: white;
+      }
+    </style>
+    <!-- prettier-ignore -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <!-- prettier-ignore -->
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <amp-list
+      id="list"
+      width="auto"
+      height="250"
+      layout="fixed-height"
+      src="./data/html.json"
+      single-item
+    >
+      <template type="amp-mustache">
+        {{#h1}}
+        <h1>{{ h1 }}</h1>
+        {{/h1}}
+        {{#h6}}
+        <h6>{{ h6 }}</h6>
+        {{/h6}}
+        {{#blockquote}}
+        <blockquote>{{ blockquote }}</blockquote>
+        {{/blockquote}}
+        {{#img}}
+        <figure>
+          <amp-img
+            alt="{{ alt }}"
+            src="{{ src }}"
+            width="{{ width }}"
+            height="{{ height }}"
+            layout="intrinsic"
+          >
+          </amp-img>
+          <figcaption>{{ figcaption }}</figcaption>
+        </figure>
+        {{/img}}
+        {{{content}}}
+      </template>
+      <div overflow class="list-overflow">
+        see more
+      </div>
+      <div placeholder>loading...</div>
+      <div fallback>fail to load</div>
+    </amp-list>
+  </body>
+</html>
