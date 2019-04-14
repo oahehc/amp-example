@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script
+      async
+      custom-element="amp-list"
+      src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
+    ></script>
+    <script
+      async
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-bind"
+      src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-selector"
+      src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"
+    ></script>
+    <title>Hello, AMPs</title>
+    <link
+      rel="canonical"
+      href="http://example.ampproject.org/article-metadata.html"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <style amp-custom>
+      body {
+        padding: 5px;
+      }
+
+      .item {
+        margin: 10px;
+        border-bottom: 1px solid lightgray;
+      }
+      .rate {
+        color: #ff9800;
+      }
+      .rate[data-value='1'] > span:nth-child(n + 2) {
+        display: none;
+      }
+      .rate[data-value='2'] > span:nth-child(n + 3) {
+        display: none;
+      }
+      .rate[data-value='3'] > span:nth-child(n + 4) {
+        display: none;
+      }
+      .rate[data-value='4'] > span:nth-child(n + 5) {
+        display: none;
+      }
+
+      .selector {
+        margin: 15px 0;
+      }
+      .selector > span {
+        border: 1px solid gray;
+        padding: 5px;
+        font-size: 12px;
+      }
+      [selected] {
+        background-color: black;
+        color: white;
+      }
+      .resetBtn {
+        font-size: 16px;
+        font-weight: 800;
+      }
+      .warning {
+        background-color: red;
+        color: white;
+        padding: 5px;
+      }
+    </style>
+    <!-- prettier-ignore -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <!-- prettier-ignore -->
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <amp-state id="restaurants" src="./data/restaurants.json"></amp-state>
+    <amp-selector
+      class="selector"
+      layout="container"
+      id="rateSelector"
+      on="select:AMP.setState({selectedRate: event.selectedOptions})"
+      multiple
+    >
+      <span option="1">★</span>
+      <span option="2">★★</span>
+      <span option="3">★★★</span>
+      <span option="4">★★★★</span>
+      <span option="5">★★★★★</span>
+      <button
+        class="resetBtn"
+        on="tap:rateSelector.clear,AMP.setState({selectedRate: null})"
+      >
+        Reset
+      </button>
+    </amp-selector>
+    <hr />
+    <p class="warning" [hidden]="selectedRate.length > 0">
+      * please select at least one option
+    </p>
+    <p
+      hidden
+      [hidden]="!selectedRate.length || selectedRate.length == 0 || restaurants.items.filter(item => selectedRate && selectedRate.includes(item.rate)).length > 0"
+    >
+      no data
+    </p>
+    <amp-list
+      id="list"
+      width="auto"
+      height="250"
+      layout="fixed-height"
+      [src]="restaurants.items.filter(item => selectedRate && selectedRate.includes(item.rate))"
+    >
+      <template type="amp-mustache">
+        <div class="item">
+          <h3>{{ name }}</h3>
+          <div class="rate" data-value="{{ rate }}" title="{{ rate }}">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+          <p>{{ location }}</p>
+        </div>
+      </template>
+      <div overflow class="list-overflow">
+        see more
+      </div>
+      <div placeholder>loading...</div>
+      <div fallback>fail to load</div>
+    </amp-list>
+  </body>
+</html>

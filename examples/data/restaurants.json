@@ -3,22 +3,22 @@
     {
       "name": "1770 House",
       "location": "East Hampton, NY",
-      "rate": 4
+      "rate": "4"
     },
     {
       "name": "Arethusa al Tavolo",
       "location": "Bantam, CT",
-      "rate": 3
+      "rate": "3"
     },
     {
       "name": "Atera",
       "location": "New York, NY",
-      "rate": 5
+      "rate": "5"
     },
     {
       "name": "Barclay Prime",
       "location": "Philadelphia, PA",
-      "rate": 2
+      "rate": "2"
     }
   ]
 }

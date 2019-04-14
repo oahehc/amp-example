@@ -79,6 +79,10 @@ button for adjust font-size
 
 summary some amp components for social media like fb, twitter...
 
+#### \* amp-filter
+
+apply amp-bind and amp-selector to filter a restaurant list
+
 ---
 
 ## How to start?
