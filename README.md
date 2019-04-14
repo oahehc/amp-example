@@ -55,6 +55,22 @@ render content from a two dimension array
 
 display footer when user scrolling to second page, and update state when user click dismiss button
 
+#### \* amp-html
+
+render html base on API response
+
+```json
+{
+  "itesms": [
+    { "h1": "title" },
+    { "h6": "subtitle" },
+    { "content": "<p>article content...</p>" },
+    ...
+  ]
+}
+
+```
+
 ---
 
 ## How to start?
