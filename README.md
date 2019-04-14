@@ -75,6 +75,10 @@ render html base on API response
 
 button for adjust font-size
 
+#### \* amp-social
+
+summary some amp components for social media like fb, twitter...
+
 ---
 
 ## How to start?
@@ -92,6 +96,7 @@ browse http://localhost:9000 to check all the examples
 
 ```
 |- examples
+|- images ... sample images download from https://pixabay.com/
 |- data ... json files for simulate API response
 |- styles ... scss
 |- index.html ... root page to display all examples
