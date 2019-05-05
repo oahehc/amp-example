@@ -83,6 +83,11 @@ summary some amp components for social media like fb, twitter...
 
 apply amp-bind and amp-selector to filter a restaurant list
 
+#### \* amp-google-analytics
+
+examples about using ga in AMP
+Reference: [https://developers.google.com/analytics/devguides/collection/amp-analytics/](https://developers.google.com/analytics/devguides/collection/amp-analytics/)
+
 ---
 
 ## How to start?

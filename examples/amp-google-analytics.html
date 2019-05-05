@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script
+      async
+      custom-element="amp-analytics"
+      src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+    ></script>
+    <title>Hello, AMPs</title>
+    <link
+      rel="canonical"
+      href="http://example.ampproject.org/article-metadata.html"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <style amp-custom>
+      body {
+        padding: 5px;
+      }
+    </style>
+    <!-- prettier-ignore -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <!-- prettier-ignore -->
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <amp-analytics type="gtag" data-credentials="include">
+      <!-- render-start, ini-load, click, scroll, timer, visible, hidden, user-error, access-*, and video-* -->
+      <script type="application/json">
+        {
+          "vars" : {
+            "gtag_id": "UA-63053452-21",
+            "config" : {
+              "UA-63053452-21": { "groups": "default" }
+            }
+          },
+          "triggers": {
+            "load": {
+              "on": "ini-load",
+              "vars": {
+                "event_category": "load_event_category",
+                "event_name": "load_event_action",
+                "event_label": "load_event_label"
+              }
+            },
+            "button": {
+              "selector": "#the-button",
+              "on": "click",
+              "vars": {
+                "event_category": "click_event_category",
+                "event_name": "click_event_action",
+                "event_label": "click_event_label"
+              }
+            }
+          }
+        }
+      </script>
+    </amp-analytics>
+    <h1 id="title">google analytics</h1>
+    <button id="the-button">ga click event</button>
+  </body>
+</html>
