@@ -86,9 +86,14 @@ apply amp-bind and amp-selector to filter a restaurant list
 #### \* amp-google-analytics
 
 examples about using ga in AMP
-Reference: [https://developers.google.com/analytics/devguides/collection/amp-analytics/](https://developers.google.com/analytics/devguides/collection/amp-analytics/)
+Reference: https://developers.google.com/analytics/devguides/collection/amp-analytics/
 
 ---
+
+#### \* amp-user-agent
+
+pass user agent to server and get device/browser information from server
+Reference: https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#user-agent
 
 ## How to start?
 
