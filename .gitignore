@@ -2,3 +2,5 @@ node_modules
 .vscode
 .tmp
 examples/_test*
+
+cert/server*
