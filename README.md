@@ -106,8 +106,14 @@ Reference: https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substi
 ```
 git clone https://github.com/oahehc/amp-example.git
 yarn install
+
+* generate cert for use https in localhost
+Ref:
+https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/
+
 yarn start
 browse http://localhost:9000 to check all the examples
+(express server will be started at https://localhost:8888)
 ```
 
 ---
@@ -115,6 +121,7 @@ browse http://localhost:9000 to check all the examples
 ## Folder structure
 
 ```
+|- db/              ... simple json db for test
 |- examples/
   |- images/        ... sample images download from https://pixabay.com/
   |- data/          ... json files for simulate API response

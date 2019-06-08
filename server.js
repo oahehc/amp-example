@@ -5,6 +5,14 @@ const device = require('./utils/device');
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 
+const path = require('path');
+const fs = require('fs');
+const https = require('https');
+var certOptions = {
+  key: fs.readFileSync(path.resolve('./cert/server.key')),
+  cert: fs.readFileSync(path.resolve('./cert/server.crt')),
+};
+
 // init db
 const adapter = new FileSync('./db/db.json');
 const db = low(adapter);
@@ -39,22 +47,22 @@ app.get('/amp/list', (req, res, next) => {
 app.get('/amp/client', (req, res, next) => {
   const clientId = (req.query && req.query.cid) || '';
   let count = 1;
-  const userCount = db.get(`user.${clientId}`).value();
+  if (clientId) {
+    const userCount = db.get(`user.${clientId}`).value();
 
-  if (userCount) {
-    count = userCount + 1;
+    if (userCount) count = userCount + 1;
+    db.set(`user.${clientId}`, count).write();
   }
-  db.set(`user.${clientId}`, count).write();
 
   res.send({
     items: {
       clientId,
       count,
-      test: 'test',
     },
   });
 });
 
-app.listen(port, () => {
-  console.log(`app is listening at port ${port}`);
-});
+const server = https.createServer(certOptions, app).listen(port);
+// app.listen(port, () => {
+//   console.log(`app is listening at port ${port}`);
+// });
