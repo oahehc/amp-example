@@ -109,9 +109,11 @@ browse http://localhost:9000 to check all the examples
 ## Folder structure
 
 ```
-|- examples
-|- images ... sample images download from https://pixabay.com/
-|- data ... json files for simulate API response
-|- styles ... scss
-|- index.html ... root page to display all examples
+|- examples/
+  |- images/        ... sample images download from https://pixabay.com/
+  |- data/          ... json files for simulate API response
+  |- styles/        ... scss
+  |- index.html     ... root page to display all examples
+|- utils/           ... helper function
+|- server.js        ... node express API server
 ```
