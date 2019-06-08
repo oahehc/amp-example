@@ -99,6 +99,10 @@ use amp-access + CLIENT_ID to save user state
 (alternative for some use case about local-storage and session-storage)
 Reference: https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#client-id
 
+#### \* amp-ad-within-list
+
+insert ad within amp-list
+
 ---
 
 ## How to start?
