@@ -6,7 +6,7 @@
   "author": "oahehc <oahehc@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start-server": "nodemon server.js",
+    "start-server": "nodemon --ignore db/ --ignore examples/ server.js",
     "start-amp": "gulp serve",
     "start": "concurrently \"yarn start-server\" \"yarn start-amp\"",
     "style": "gulp styles"
@@ -21,6 +21,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
+    "lowdb": "^1.0.0",
     "nodemon": "^1.19.1"
   },
   "dependencies": {

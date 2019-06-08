@@ -2,7 +2,13 @@ const express = require('express');
 const ampCors = require('amp-toolbox-cors');
 const bodyParser = require('body-parser');
 const device = require('./utils/device');
-// const isProd = process.env.NODE_ENV === 'production';
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+
+// init db
+const adapter = new FileSync('./db/db.json');
+const db = low(adapter);
+db.defaults({ user: {} }).write();
 
 // start express server
 const app = express();
@@ -15,12 +21,6 @@ app.use(
     extended: false,
   }),
 );
-// app.get('/', (req, res, next) => {
-//   res.writeHead(isProd ? 301 : 302, {
-//     Location: '/amp',
-//   });
-//   res.end();
-// });
 
 // API for AMP page
 app.use(
@@ -33,6 +33,24 @@ app.get('/amp/list', (req, res, next) => {
     items: {
       userAgent: (req.query && req.query.ua) || '',
       device: device(req.query && req.query.ua),
+    },
+  });
+});
+app.get('/amp/client', (req, res, next) => {
+  const clientId = (req.query && req.query.cid) || '';
+  let count = 1;
+  const userCount = db.get(`user.${clientId}`).value();
+
+  if (userCount) {
+    count = userCount + 1;
+  }
+  db.set(`user.${clientId}`, count).write();
+
+  res.send({
+    items: {
+      clientId,
+      count,
+      test: 'test',
     },
   });
 });
