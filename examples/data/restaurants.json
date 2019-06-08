@@ -8,7 +8,8 @@
     {
       "name": "Arethusa al Tavolo",
       "location": "Bantam, CT",
-      "rate": "3"
+      "rate": "3",
+      "ad": true
     },
     {
       "name": "Atera",

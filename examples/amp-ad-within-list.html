@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script
+      async
+      custom-element="amp-list"
+      src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
+    ></script>
+    <script
+      async
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-ad"
+      src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+    ></script>
+    <title></title>
+    <link
+      rel="canonical"
+      href="http://example.ampproject.org/article-metadata.html"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <!-- prettier-ignore -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <!-- prettier-ignore -->
+    <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+      .ad-wrapper {
+        margin: 10px;
+      }
+
+      .item {
+        box-shadow: 0 0 2px 0 gray;
+        width: 300px;
+        margin: 10px;
+        padding: 2px 10px;
+      }
+
+      .item:hover {
+        box-shadow: 1px 1px 4px 0 black;
+      }
+    </style>
+  </head>
+  <body>
+    <amp-list
+      id="list"
+      width="auto"
+      height="250"
+      layout="fixed-height"
+      src="./data/restaurants.json"
+    >
+      <template type="amp-mustache">
+        <div class="item">
+          <h3>{{ name }}</h3>
+          <p>{{ location }}</p>
+          <p>Rate: {{ rate }}</p>
+        </div>
+        {{#ad}}
+        <div class="ad-wrapper">
+          <amp-ad
+            width="320"
+            height="100"
+            type="doubleclick"
+            data-slot="/21737763597/adunit-1"
+          >
+          </amp-ad>
+        </div>
+        {{/ad}}
+      </template>
+      <div overflow class="list-overflow">
+        see more
+      </div>
+      <div placeholder>loading...</div>
+      <div fallback>fail to load</div>
+    </amp-list>
+  </body>
+</html>
