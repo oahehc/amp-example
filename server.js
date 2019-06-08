@@ -62,7 +62,6 @@ app.get('/amp/client', (req, res, next) => {
   });
 });
 
-const server = https.createServer(certOptions, app).listen(port);
-// app.listen(port, () => {
-//   console.log(`app is listening at port ${port}`);
-// });
+https.createServer(certOptions, app).listen(port, () => {
+  console.log(`app is listening at port ${port}`);
+});
