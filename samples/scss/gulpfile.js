@@ -25,7 +25,7 @@ gulp.task(
     return gulp
       .src('index.html')
       .pipe(
-        $.replace(/<!-- (.*).scss -->/g, function() {
+        $.replace(/<!-- scss -->/g, function() {
           const style = fs.readFileSync(`./.tmp/index.css`, 'utf8');
           return '<style amp-custom>' + style.replace(/\n/g, '') + '</style>';
         }),

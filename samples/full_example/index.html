@@ -3,6 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script
+      async
+      custom-element="amp-list"
+      src="https://cdn.ampproject.org/v0/amp-list-0.1.js"
+    ></script>
+    <script
+      async
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+    ></script>
     <title>Hello, AMPs</title>
     <!-- scss -->
     <meta
@@ -15,20 +25,24 @@
     <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
-    <div class="flex-container">
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorem
-        error ab? Eveniet dignissimos dolorem vero explicabo dolores! Vel esse
-        ipsam doloribus vitae ducimus. Doloremque asperiores sint dolorem harum
-        sed.
+    <amp-list
+      id="list"
+      width="auto"
+      height="50"
+      layout="fixed-height"
+      single-item
+      src="http://localhost:8888/api/list"
+    >
+      <template type="amp-mustache">
+        {{#list }}
+        <span class="item">{{.}}</span>
+        {{/list }}
+      </template>
+      <div overflow class="list-overflow">
+        see more
       </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorem
-        error ab? Eveniet dignissimos dolorem vero explicabo dolores!
-      </div>
-    </div>
+      <div placeholder>loading...</div>
+      <div fallback>fail to load</div>
+    </amp-list>
   </body>
 </html>
