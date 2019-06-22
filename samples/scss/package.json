@@ -1,0 +1,16 @@
+{
+  "name": "scss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "style": "gulp style"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-load-plugins": "^1.6.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
